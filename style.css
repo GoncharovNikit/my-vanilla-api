@@ -34,5 +34,38 @@ html, body {
     display: inline-block;
     height: 100%;
     width: 100%;
-    background-color: rgb(224, 224, 224);
+    background-color: rgb(245, 241, 241);
+}
+
+table {
+    width: 90% !important;
+    margin: 20px auto;
+    background-color: black;
+    color: whitesmoke;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    user-select: none;
+}
+table th {
+    border: 1px solid white;
+    border-left: none;
+    border-right: none;
+    padding: 10px;
+}
+table td {
+    font-size: 14pt;
+}
+tbody tr:hover {
+    background-color: lightslategray;
+}
+table thead {
+    text-transform: uppercase;
+    font-size: 17pt;
+}
+.descrip-col {
+    width: 60%;   
+}
+.id-col {
+    font-weight: 800;
 }

@@ -3,11 +3,12 @@
 require_once "./database.php";
 
 $db = Database::getConnection();
-$arr_resp = [];
-$data = $db->query('SELECT * FROM products', PDO::FETCH_ASSOC);
-foreach ($data as $key => $value) {
-    array_push($arr_resp, $value);
-}
+$data = $db->query('SELECT * FROM products')->fetchAll(PDO::FETCH_ASSOC);
 
-http_response_code(200);
-echo json_encode(['data' => $arr_resp, 'code' => 200]);
+if ($data) {
+    http_response_code(200);
+    echo json_encode(['data' => $data, 'code' => 200]);
+} else {
+    http_response_code(500);
+    echo "Error occured!";
+}
