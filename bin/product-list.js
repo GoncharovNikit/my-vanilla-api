@@ -8,10 +8,11 @@ function productList() {
                 let html_var = `<table>
                                 <thead>
                                     <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">title</th>
-                                        <th scope="col">price</th>
-                                        <th scope="col">description</th>
+                                        <th>#</th>
+                                        <th>title</th>
+                                        <th>price</th>
+                                        <th>description</th>
+                                        <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -23,6 +24,7 @@ function productList() {
                         <td>${elem.title}</td>
                         <td>${elem.price}</td>
                         <td class="descrip-col">${elem.description}</td>
+                        <td class="remove-img"><img class="remove-product" src="/assets/remove-img.png" alt="Remove" /></td>
                     </tr>
                     `;
                 });
