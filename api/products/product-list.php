@@ -1,6 +1,6 @@
 <?php
 
-require_once "./database.php";
+require "../database.php";
 
 $db = Database::getConnection();
 $data = $db->query('SELECT * FROM products')->fetchAll(PDO::FETCH_ASSOC);

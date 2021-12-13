@@ -12,7 +12,7 @@ function productAdd() {
         e.preventDefault();
         const formFields = e.currentTarget.elements;
         // POST request
-        fetch("/api/product-add.php", {
+        fetch("/api/products/product-add.php", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({

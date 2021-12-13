@@ -8,7 +8,7 @@ if (
     isset($data['description'])
 ) {
     try {
-        require_once "./database.php";
+        require "../database.php";
 
         $db = Database::getConnection();
         $ins_query = $db->prepare("INSERT INTO products(title, price, `description`) VALUES(?, ?, ?)");
@@ -16,10 +16,10 @@ if (
 
         if ($ins_query->rowCount()) {
             http_response_code(201);
-            echo json_encode(['Rows inserted' => $ins_query->rowCount(), 'status' => 201]);
+            echo json_encode(['success' => $ins_query->rowCount(), 'status' => 201]);
         } else {
             http_response_code(500);
-            echo json_encode(['error' => 'Database inner error..', 'status' => 500]);
+            echo json_encode(['error' => 'Database or server inner error..', 'status' => 500]);
         }
     } catch (PDOException $ex) {
         http_response_code(500);

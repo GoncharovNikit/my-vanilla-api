@@ -1,5 +1,5 @@
 function productList() {
-    fetch(`/api/products.php`, {
+    fetch(`/api/products/product-list.php`, {
         method: "GET",
     })
         .then((resp) => {
